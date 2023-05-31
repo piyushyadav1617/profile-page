@@ -1,19 +1,19 @@
 import mongoose from "mongoose";
+
+import { MongoMemoryServer } from "mongodb-memory-server";
+
 // import ENV from '../config.js'
 
 async function connect() {
-    const uri = "mongodb://127.0.0.1:27017"; // Replace "your-mongodb-uri" with your actual MongoDB connection URI
 
-    try {
-        await mongoose.connect(uri, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+    const mongod = await MongoMemoryServer.create();
+    const getUri = mongod.getUri();
+    mongoose.set('strictQuery', true)
 
-        console.log("Database Connected");
-    } catch (error) {
-        console.error("Database Connection Error:", error);
-    }
+    const db = await mongoose.connect(getUri);
+
+    console.log("Database Connected")
+    return db;
 }
 
 export default connect;
