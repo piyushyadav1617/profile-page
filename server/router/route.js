@@ -6,6 +6,7 @@ const router = Router();
 
 
 /** POST Methods */
+
 router.route('/register').post(controller.register); // register user
 router.route('/registerMail').post(registerMail); // send the email
 router.route('/authenticate').post((req, res) => res.end()); // authenticate user
@@ -19,8 +20,10 @@ router.route('/createResetSession').get(controller.createResetSession) // reset 
 
 
 /** PUT Methods */
+
 router.route('/updateuser').put(Auth, controller.updateUser); // is use to update the user profile
 router.route('/resetPassword').put(controller.verifyUser, controller.resetPassword); // use to reset password
+
 
 
 
