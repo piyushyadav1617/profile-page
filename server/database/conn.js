@@ -1,18 +1,19 @@
 import mongoose from "mongoose";
-
-
-
 // import ENV from '../config.js'
 
 async function connect() {
+    const uri = "mongodb://127.0.0.1:27017"; // Replace "your-mongodb-uri" with your actual MongoDB connection URI
 
-    const getUri = mongod.getUri();
-    mongoose.set('strictQuery', true)
+    try {
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
 
-    const db = await mongoose.connect('mongodb://127.0.0.1:27017/myapp');
-
-    console.log("Database Connected")
-    return db;
+        console.log("Database Connected");
+    } catch (error) {
+        console.error("Database Connection Error:", error);
+    }
 }
 
 export default connect;
