@@ -6,7 +6,9 @@ export async function usernameValidate(values) {
 
     if (values.username) {
         //check user exist or not 
+        console.log(values.username)
         const { status } = await authenticate(values.username);
+        console.log(status)
         if (status != 200) {
             errors.exist = toast.error("User does not exist...!");
         }
@@ -65,7 +67,7 @@ function passwordVerify(error = {}, values) {
     } else if (values.password.length < 4) {
         error.password = toast.error("Password must be more than 4 characters long")
     } else if (!specialChars.test(values.password)) {
-        error.password = toast.error("Password is not valid try another...");
+        error.password = toast.error("Password should include atleast one upper and lower case letters and a special character");
     }
     return error;
 }

@@ -230,7 +230,7 @@ export async function getUser(req, res) {
 
 
         const user = await UserModel.findOne({ username })
-
+        console.log(user);
         if (!user) return res.status(501).send({ error: "Couldn't Find the User" });
 
         /** remove password from user */
@@ -242,7 +242,7 @@ export async function getUser(req, res) {
 
 
     } catch (error) {
-        return res.status(404).send({ error: error.message })
+        return res.status(404).send({ error })
     }
 }
 
