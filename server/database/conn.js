@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
+dotenv.config();
 
-
-
-// import ENV from '../config.js'
-
+const ATLAS_URI = process.env.ATLAS_URI;
 async function connect() {
 
 
     mongoose.set('strictQuery', true)
 
-    const db = await mongoose.connect('mongodb://127.0.0.1:27017/loginApp');
+    const db = await mongoose.connect(ATLAS_URI);
 
     console.log("Database Connected")
     return db;
