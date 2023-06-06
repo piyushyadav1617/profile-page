@@ -63,11 +63,11 @@ function passwordVerify(error = {}, values) {
     if (!values.password) {
         error.password = toast.error("Password Required...!");
     } else if (values.password.includes(" ")) {
-        error.password = toast.error("Wrong Password...!");
+        error.password = toast.error("Invalid Password...!");
     } else if (values.password.length < 4) {
         error.password = toast.error("Password must be more than 4 characters long")
     } else if (!specialChars.test(values.password)) {
-        error.password = toast.error("Password should include atleast one upper and lower case letters and a special character");
+        error.password = toast.error("Invalid password...");
     }
     return error;
 }
