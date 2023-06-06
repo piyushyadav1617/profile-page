@@ -7,6 +7,13 @@
 }
 
 body {
-  background: #dcdcdc;
-  background-image: url("./assests/Background.png");
+  background: rgb(119, 115, 206);
+  background: linear-gradient(
+    45deg,
+    rgb(13, 10, 83) 0%,
+    rgb(18, 16, 147) 0%,
+    rgba(9, 121, 97, 1) 41%,
+    rgba(5, 161, 255, 1) 80%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }

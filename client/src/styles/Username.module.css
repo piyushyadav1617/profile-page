@@ -4,10 +4,10 @@
   box-shadow: 0 4px 30px #4747470b;
   backdrop-filter: blur(7.1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  @apply border-4 border-gray-50 shrink-0  h-fit w-[30%] rounded-3xl py-20 px-7 min-w-max;
+  @apply rounded-lg shadow-lg py-8 mx-2 my-4;
 }
 .profile_img {
-  @apply border-4 border-gray-100 w-[130px] rounded-full shadow-lg cursor-pointer;
+  @apply border-4 border-gray-100 w-[100px] rounded-full shadow-lg cursor-pointer mx-auto;
   @apply hover:border-gray-200;
 }
 .textbox {

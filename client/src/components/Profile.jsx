@@ -56,7 +56,7 @@ if(isLoading) return <h1 className='text-2xl font-bold'>isLoading</h1>;
 if(serverError) return <h1 className='text-xl text-red-500'>{serverError.message}</h1>
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto py-8 h-full">
             <Toaster position='top-center' reverseOrder={false}></Toaster>
             <div className='flex justify-center items-center h-screen'>
                 <div className={` ${styles.glass} ${extend.glass} `} >
@@ -69,7 +69,7 @@ if(serverError) return <h1 className='text-xl text-red-500'>{serverError.message
                     </div>
 
                     <form className='py-1' onSubmit={formik.handleSubmit}>
-                        <div className='profile flex justify-center py-4'>
+                        <div className='profile flex justify-center py-3'>
                            <label htmlFor="profile">
                            <img src={ file || apiData?.profile || avatar} className={`${styles.profile_img} ${extend.profile_img}`} alt="avatar" />
 
@@ -80,12 +80,12 @@ if(serverError) return <h1 className='text-xl text-red-500'>{serverError.message
 
                         <div className="textbox flex flex-col items-center gap-6">
 
-                        <div className="name flex w-3/4 gap-10">
+                        <div className="name flex flex-col items-center w-full sm:flex-row sm:w-3/4 gap-6">
                           <input {...formik.getFieldProps('firstName')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='FirstName' />
                           <input {...formik.getFieldProps('lastName')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='LastName' />
                         </div>
 
-                        <div className="name flex w-3/4 gap-10">
+                        <div className="name flex flex-col items-center w-full sm:flex-row sm:w-3/4 gap-6">
                           <input {...formik.getFieldProps('mobile')} className={`${styles.textbox} ${extend.textbox}`} type="tel" placeholder='Mobile' />
                           <input {...formik.getFieldProps('email')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Email*' />
 

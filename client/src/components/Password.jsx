@@ -16,7 +16,7 @@ export default function Password() {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            password: ''
+            password: 'Example@123'
         },
         validate: passwordValidate,
         validateOnBlur: false,
@@ -26,7 +26,7 @@ export default function Password() {
             toast.promise(loginPromise, {
                 loading: 'Checking...',
                 success : <b>Login Successfully...!</b>,
-                error : <b>Password Not Match!</b>
+                error : <b>Password did Not Match!</b>
             })
             loginPromise.then(res => {
                 let { token } = res.data;
